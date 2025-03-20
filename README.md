@@ -1,7 +1,9 @@
 # Basic-Operation-Calculator
-this is a terminal-based basic operation calculator app written in C++ with OOP. i use CMake and Ninja as the build system and G++ as the compiler, this is my first C++ project btw
+this is a terminal-based basic operation calculator app written in C++ with OOP, this is my first C++ project btw
 
 **How to build my code**
+make sure you have already cmake, ninja and g++ installed
+
 1. Create the 'build' directory
 ```
 mkdir -p build
@@ -18,5 +20,3 @@ ninja
 ```
 ./BOC
 ```
-
-You can also use any other build system or compiler to build my code

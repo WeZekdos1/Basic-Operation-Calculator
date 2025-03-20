@@ -6,6 +6,8 @@ private:
   int x;
   int y;
 public:
+  basicOp(int input);
+
   int addition(int first, int second);
   float addition(float first, float second);
 

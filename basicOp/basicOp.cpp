@@ -4,7 +4,14 @@
 basicOp::basicOp(int input) {
   int x;
   int y;
-  while (true) {
+// This comment line below isn't finished yet
+// 
+//  balik:
+//  if ((input == 1 ||input == 2 || input == 3 || input == 4) && static_cast<int>(input) || std::cin.fail()) {
+//      std::cout << "Select: ";
+//      std::cin >> input;
+//      goto balik;
+//  } else {
     switch (input) {
       case 1:
         std::cout << "enter the first number: ";
@@ -35,11 +42,9 @@ basicOp::basicOp(int input) {
         std::cout << "the result is: " << division(x, y) << std::endl;
         break;
       default:
-        std::cout << "sing baleg ngeusian th" << std::endl;
+        std::cout << "sing baleg ngeusian teh atu!" << std::endl;
         break;
-      
-    }
-    break;
+//    }
   }
 }
 

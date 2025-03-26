@@ -3,6 +3,8 @@
 
 
 class view {
+private:
+  void selectOp(int &x);
 public:
   view();
   void basicOperation();

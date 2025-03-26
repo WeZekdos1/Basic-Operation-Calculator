@@ -2,23 +2,26 @@
 #define BASICOP_H
 
 class basicOp {
-private:
-  int x;
-  int y;
 public:
-  basicOp(int input);
+  // basicOp(int input);
 
-  int addition(int first, int second);
-  float addition(float first, float second);
+  // void selectOperation(int z);
+  // void selectOperation(float z);
 
-  int subtraction(int first, int second);
-  float subtraction(float first, float second);
+  void inputNum(int &u);
+  void inputNum(float &u);
 
-  int multipication(int first, int second);
-  float multipication(float first, float second);
+  void addition(int first, int second);
+  void addition(float first, float second);
 
-  int division(int first, int second);
-  float division(float first, float second);
+  void subtraction(int first, int second);
+  void subtraction(float first, float second);
+
+  void multiplication(int first, int second);
+  void multiplication(float first, float second);
+
+  void division(int first, int second);
+  void division(float first, float second);
 
 };
 

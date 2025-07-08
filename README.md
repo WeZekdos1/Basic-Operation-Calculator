@@ -1,5 +1,9 @@
 # Basic-Operation-Calculator
-this is a terminal-based basic operation calculator app written in C++ with OOP, this is my first C++ project btw
+this is my simple text-based calculator written in C++ with OOP
+
+**Reference**
+- https://stackoverflow.com/questions/257091/how-do-i-flush-the-cin-buffer
+- https://stackoverflow.com/questions/7491877/c-catch-runtime-error/7491904#7491904
 
 **How to build my code**
 make sure you have already cmake, ninja and g++ installed

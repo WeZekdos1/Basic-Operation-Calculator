@@ -5,21 +5,35 @@
 #include "view.h"
 #include "../basicOp/basicOp.h"
 
-view::view() {
+void view::start() {
   int z;
-  std::cout << "Welcome to the Basic Operation Calculator" << std::endl;
-  std::cout << "What kind of Calculation do you want?" << std::endl;
+  std::cout << "Welcome to My Calculator" << std::endl;
+  std::cout << "Click [ CTRL + C ] to Exit" << std::endl;
+  std::cout << std::endl << "What kind of Calculation do you want?" << std::endl;
   std::cout << "1. Basic Operation\n";
   std::cout << "Select: ";
+  try {
   std::cin >> z;
     switch (z) {
       case 1:
         basicOperation();
         break;
       default:
-        std::cout << "sing baleg ngeusian teh atu!" << std::endl;
+	if (std::cin.fail()) {
+	std::cin.clear();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        throw std::runtime_error("sing baleg ngeusian teh atu!");
+	} else {
+	std::cin.clear();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	throw std::runtime_error("pokonamah ngan aya 1 pilihan na!");
+	}
         break;
-  }
+    }
+  }   catch(const std::runtime_error &e) {
+	std::cout << std::endl << "#### " << e.what() << " ####" << std::endl;
+	this->start();
+      }
 }
 
 void view::basicOperation() {
@@ -27,15 +41,15 @@ void view::basicOperation() {
   std::cout << "Select the operation" << std::endl;
   std::cout << "1. Addition\n2. Subtraction\n3. Multipication\n4. Division" << std::endl;
   std::cout << "Select: ";
-  selectOp(y);
+  this->selectOp(y);
 }
 
 void view::selectOp(int &x) {
   try {
     std::cin >> x;
     if (x == 1 || x == 2 || x == 3 || x == 4) {
-      float a;
-      float b;
+      double a;
+      double b;
       basicOp myOperation;
       switch (x) {
         case 1:
@@ -52,19 +66,19 @@ void view::selectOp(int &x) {
           break;
       }
     } else if (std::cin.fail()) {
-      std::cin.clear();
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-      throw std::runtime_error("Please enter the correct input: ");
+      	std::cin.clear();
+      	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+      	throw std::runtime_error("Please enter the correct input: ");
     } else {
-      std::cin.clear();
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-      throw std::runtime_error("Please enter the number between 1 to 4: ");
+      	std::cin.clear();
+      	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+      	throw std::runtime_error("Please enter the number between 1 to 4: ");
     }
   }
 
   catch (std::runtime_error &e) {
     std::cout << e.what();
-    selectOp(x);
+    this->selectOp(x);
   }
 
 }

@@ -3,26 +3,17 @@
 
 class basicOp {
 public:
-  // basicOp(int input);
+  void inputNum(double &u);
 
-  // void selectOperation(int z);
-  // void selectOperation(float z);
+  void addition(double first, double second);
 
-  void inputNum(int &u);
-  void inputNum(float &u);
+  void subtraction(double first, double second);
 
-  void addition(int first, int second);
-  void addition(float first, float second);
+  void multiplication(double first, double second);
 
-  void subtraction(int first, int second);
-  void subtraction(float first, float second);
-
-  void multiplication(int first, int second);
-  void multiplication(float first, float second);
-
-  void division(int first, int second);
-  void division(float first, float second);
+  void division(double first, double second);
 
 };
 
 #endif // BASICOP_H
+

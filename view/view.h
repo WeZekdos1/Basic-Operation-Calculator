@@ -6,7 +6,7 @@ class view {
 private:
   void selectOp(int &x);
 public:
-  view();
+  void start();
   void basicOperation();
 
 };
